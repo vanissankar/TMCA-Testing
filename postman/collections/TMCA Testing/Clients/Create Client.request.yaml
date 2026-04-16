@@ -1,0 +1,21 @@
+$kind: http-request
+description: Team lead and team member only. Creates a client record under the
+  logged-in user.
+url: "{{baseUrl}}/clients"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "pan_number": "ABCDE1234F",
+      "name_as_per_pan": "Amit Kumar",
+      "dob": "1990-01-15",
+      "proprietary_name": "Amit Traders"
+    }
+auth:
+  type: bearer
+  credentials:
+    token: "{{accessToken}}"
+order: 1000

@@ -1,0 +1,13 @@
+$kind: http-request
+description: Returns clients owned by the logged-in team_lead or team_member.
+url: "{{baseUrl}}/clients/my?page=1&limit=10&search="
+method: GET
+queryParams:
+  page: "1"
+  limit: "10"
+  search: ""
+auth:
+  type: bearer
+  credentials:
+    token: "{{accessToken}}"
+order: 3000

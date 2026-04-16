@@ -1,0 +1,15 @@
+$kind: http-request
+description: Final submit after required sections are complete. Marks filing
+  status as onboarding_completed.
+url: "{{baseUrl}}/clients/{{clientId}}/onboarding/submit"
+method: POST
+headers:
+  - key: ""
+    value: ""
+  - key: ""
+    value: ""
+auth:
+  type: bearer
+  credentials:
+    token: "{{accessToken}}"
+order: 15000

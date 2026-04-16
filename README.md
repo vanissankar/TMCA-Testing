@@ -25,8 +25,9 @@ This repository is the Postman test pack for the TMCA backend. It exists so the 
 2. Set `baseUrl` to `http://localhost:3000` if needed.
 3. Run `Authentication > Login` first.
 4. The login request stores `data.access_token` in the collection variable `accessToken`.
-5. Use the same collection variables for `organizationId`, `teamId`, `userId`, `clientId`, and `memberId`.
-6. Run the requests in this order:
+5. The collection now auto-populates `organizationId`, `teamId`, `userId`, and `clientId` from create/login responses.
+6. Use `memberId` only for member-detail routes when you want to target a specific existing user.
+7. Run the requests in this order:
    - `Authentication > Login`
    - `Organizations > Register Organization`
    - `Organizations > Get Organization By Id`
@@ -76,10 +77,21 @@ This repository is the Postman test pack for the TMCA backend. It exists so the 
 
 ### Login
 
+Using email:
+
 ```json
 {
   "email": "johndoe@example.com",
   "password": "SecurePassword123!"
+}
+```
+
+Using username:
+
+```json
+{
+  "username": "anis",
+  "password": "anis@123"
 }
 ```
 
@@ -137,7 +149,8 @@ This repository is the Postman test pack for the TMCA backend. It exists so the 
 
 ## Notes for the reviewer
 
-- Replace the placeholder UUID variables with real values returned from earlier requests.
+- Do not rely on placeholder UUIDs. Use ids captured from earlier responses.
+- `organization_id` and `team_id` inputs must be valid UUID v4 values.
 - Keep the JWT token in the `accessToken` collection variable.
 - The collection includes only routes currently implemented in backend code.
 - Onboarding requests map to existing DB tables used by backend:

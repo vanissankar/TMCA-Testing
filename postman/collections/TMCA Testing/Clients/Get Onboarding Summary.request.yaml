@@ -1,0 +1,9 @@
+$kind: http-request
+description: Returns role-scoped onboarding summary. Allowed for all authenticated roles.
+url: "{{baseUrl}}/clients/dashboard/onboarding-summary"
+method: GET
+auth:
+  type: bearer
+  credentials:
+    token: "{{accessToken}}"
+order: 5000

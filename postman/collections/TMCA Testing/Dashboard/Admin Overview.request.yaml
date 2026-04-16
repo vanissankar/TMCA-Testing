@@ -1,0 +1,15 @@
+$kind: http-request
+description: Admin dashboard overview with optional filters.
+url: "{{baseUrl}}/dashboard/admin/overview?page=1&limit=10&search=&from=&to="
+method: GET
+queryParams:
+  page: "1"
+  limit: "10"
+  search: ""
+  from: ""
+  to: ""
+auth:
+  type: bearer
+  credentials:
+    token: "{{accessToken}}"
+order: 1000

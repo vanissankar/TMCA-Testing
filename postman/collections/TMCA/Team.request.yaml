@@ -1,0 +1,15 @@
+$kind: http-request
+url: http://localhost:3000/teams/register
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"name\": \"Finance Team\",\r
+
+    \  \"type\": \"internal\",\r
+
+    \  \"organization_id\": \"e4deaa2b-06e9-4a8f-a686-2de2a19e1895\"\r
+
+    }"
+order: 2000

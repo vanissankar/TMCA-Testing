@@ -1,0 +1,14 @@
+# Use this workspace to collaborate
+workspace:
+  id: b19c6ceb-d09d-436e-8dba-ca9990e0a21d
+
+localResources:
+  collections:
+    - ..\tmca-testing\TMCA.postman_collection.json
+
+# Each entry here maps a local resource to one or more corresponding objects in Postman Cloud
+
+cloudResources:
+  collections:
+    ..\postman\collections\TMCA: 3afd5961-bcd1-4454-ac03-b211c127e194
+    ..\postman\collections\TMCA Testing: 4b45550a-342c-410c-977b-e8c805096bea

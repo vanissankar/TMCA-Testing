@@ -1,0 +1,19 @@
+$kind: http-request
+description: Saves bank highlights into bank_accounts table.
+url: "{{baseUrl}}/clients/{{clientId}}/onboarding/save"
+method: POST
+headers:
+  - key: ""
+    value: ""
+  - key: ""
+    value: ""
+body:
+  type: json
+  content: |-
+    {
+      \
+auth:
+  type: bearer
+  credentials:
+    token: "{{accessToken}}"
+order: 10000

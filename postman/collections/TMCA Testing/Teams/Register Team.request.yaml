@@ -1,0 +1,25 @@
+$kind: http-request
+description: Admin only. Creates a team under an organization.
+url: "{{baseUrl}}/teams/register"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "name": "Finance Team",
+      "type": "internal",
+      "organization_id": "{{organizationId}}"
+    }
+auth:
+  type: bearer
+  credentials:
+    token: "{{accessToken}}"
+scripts:
+  - type: afterResponse
+    code: |-
+      const json = pm.response.json();
+      if (json?.data?.id) pm.collectionVariables.set("teamId", json.data.id);
+    language: text/javascript
+order: 1000

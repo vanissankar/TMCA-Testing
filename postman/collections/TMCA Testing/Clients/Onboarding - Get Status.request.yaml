@@ -1,0 +1,14 @@
+$kind: http-request
+description: Returns section-wise completion and filing snapshot for current onboarding.
+url: "{{baseUrl}}/clients/{{clientId}}/onboarding"
+method: GET
+headers:
+  - key: ""
+    value: ""
+  - key: ""
+    value: ""
+auth:
+  type: bearer
+  credentials:
+    token: "{{accessToken}}"
+order: 14000

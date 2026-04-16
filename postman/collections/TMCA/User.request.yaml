@@ -1,0 +1,23 @@
+$kind: http-request
+url: http://localhost:3000/users/register
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"name\": \"Akash\",\r
+
+    \  \"username\": \"Akash2176e\",\r
+
+    \  \"password\": \"tmca@123\",\r
+
+    \  \"role\": \"admin\",\r
+
+    \  \"team_id\": \"57d39e65-8557-4ec5-b783-4656a0e6e54a\",\r
+
+    \  \"phone\": \"+91-7305594291\"\r
+
+    }"
+auth:
+  type: noauth
+order: 3000

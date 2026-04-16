@@ -1,0 +1,9 @@
+$kind: http-request
+description: Returns a user by id with role-based scope control.
+url: "{{baseUrl}}/users/{{userId}}"
+method: GET
+auth:
+  type: bearer
+  credentials:
+    token: "{{accessToken}}"
+order: 3000

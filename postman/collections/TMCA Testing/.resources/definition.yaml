@@ -1,0 +1,9 @@
+$kind: collection
+variables:
+  baseUrl: http://localhost:3000
+  accessToken: ""
+  organizationId: ""
+  teamId: ""
+  userId: ""
+  clientId: ""
+  memberId: ""

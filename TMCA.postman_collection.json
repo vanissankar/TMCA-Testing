@@ -1,4 +1,4 @@
-﻿{
+{
     "info":  {
                  "_postman_id":  "8ae9d6ef-9409-4a60-8dd4-521e4c37f06b",
                  "name":  "TMCA Testing",
@@ -17,23 +17,23 @@
                      },
                      {
                          "key":  "organizationId",
-                         "value":  "00000000-0000-0000-0000-000000000001"
+                         "value":  ""
                      },
                      {
                          "key":  "teamId",
-                         "value":  "00000000-0000-0000-0000-000000000002"
+                         "value":  ""
                      },
                      {
                          "key":  "userId",
-                         "value":  "00000000-0000-0000-0000-000000000003"
+                         "value":  ""
                      },
                      {
                          "key":  "clientId",
-                         "value":  "00000000-0000-0000-0000-000000000004"
+                         "value":  ""
                      },
                      {
                          "key":  "memberId",
-                         "value":  "00000000-0000-0000-0000-000000000005"
+                         "value":  ""
                      }
                  ],
     "item":  [
@@ -82,11 +82,11 @@
                                                                        "exec":  [
                                                                                     "const json = pm.response.json();",
                                                                                     "pm.test(\u0027Login response contains access_token\u0027, function () {",
-                                                                                    "  pm.expect(json.data.access_token).to.be.a(\u0027string\u0027);",
+                                                                                    "  pm.expect(json?.data?.access_token).to.be.a(\u0027string\u0027);",
                                                                                     "});",
-                                                                                    "if (json \u0026\u0026 json.data \u0026\u0026 json.data.access_token) {",
-                                                                                    "  pm.collectionVariables.set(\u0027accessToken\u0027, json.data.access_token);",
-                                                                                    "}"
+                                                                                    "if (json?.data?.access_token) pm.collectionVariables.set(\"accessToken\", json.data.access_token);",
+                                                                                    "if (json?.data?.user?.id) pm.collectionVariables.set(\"userId\", json.data.user.id);",
+                                                                                    "if (json?.data?.user?.team_id) pm.collectionVariables.set(\"teamId\", json.data.user.team_id);"
                                                                                 ]
                                                                    }
                                                     }
@@ -143,7 +143,19 @@
                                                   },
                                       "response":  [
 
-                                                   ]
+                                                   ],
+                                      "event":  [
+                                                    {
+                                                        "listen":  "test",
+                                                        "script":  {
+                                                                       "type":  "text/javascript",
+                                                                       "exec":  [
+                                                                                    "const json = pm.response.json();",
+                                                                                    "if (json?.data?.id) pm.collectionVariables.set(\"organizationId\", json.data.id);"
+                                                                                ]
+                                                                   }
+                                                    }
+                                                ]
                                   },
                                   {
                                       "name":  "Get Organization By Id",
@@ -258,7 +270,19 @@
                                                   },
                                       "response":  [
 
-                                                   ]
+                                                   ],
+                                      "event":  [
+                                                    {
+                                                        "listen":  "test",
+                                                        "script":  {
+                                                                       "type":  "text/javascript",
+                                                                       "exec":  [
+                                                                                    "const json = pm.response.json();",
+                                                                                    "if (json?.data?.id) pm.collectionVariables.set(\"teamId\", json.data.id);"
+                                                                                ]
+                                                                   }
+                                                    }
+                                                ]
                                   },
                                   {
                                       "name":  "Get Team By Id",
@@ -375,7 +399,19 @@
                                                   },
                                       "response":  [
 
-                                                   ]
+                                                   ],
+                                      "event":  [
+                                                    {
+                                                        "listen":  "test",
+                                                        "script":  {
+                                                                       "type":  "text/javascript",
+                                                                       "exec":  [
+                                                                                    "const json = pm.response.json();",
+                                                                                    "if (json?.data?.id) pm.collectionVariables.set(\"userId\", json.data.id);"
+                                                                                ]
+                                                                   }
+                                                    }
+                                                ]
                                   },
                                   {
                                       "name":  "Get My Profile",
@@ -718,7 +754,7 @@
                                                                      "value":  "application/json"
                                                                  },
                                                       "body":  {
-                                                                   "raw":  "{\n  \\",
+                                                                   "raw":  "{\r\n    \"section_code\":  \"client_details\",\r\n    \"data\":  {\r\n                 \"pan_number\":  \"ABCDE1234F\",\r\n                 \"dob\":  \"1990-01-15\",\r\n                 \"proprietary_name\":  \"Amit Traders\",\r\n                 \"name_as_per_pan\":  \"Amit Kumar\",\r\n                 \"assessment_year\":  \"2024-25\",\r\n                 \"financial_year\":  \"2023-24\"\r\n             }\r\n}",
                                                                    "options":  {
                                                                                    "raw":  {
                                                                                                "language":  "json"
@@ -775,7 +811,7 @@
                                                                      "value":  "application/json"
                                                                  },
                                                       "body":  {
-                                                                   "raw":  "{\n  \\",
+                                                                   "raw":  "{\r\n    \"section_code\":  \"form_uploads\",\r\n    \"data\":  {\r\n                 \"form_26as_files\":  [\r\n                                         {\r\n                                             \"file_url\":  \"https://files.example.com/26as-2024.pdf\",\r\n                                             \"document_type\":  \"form_26as\"\r\n                                         }\r\n                                     ],\r\n                 \"form_16_files\":  [\r\n\r\n                                   ],\r\n                 \"ais_files\":  [\r\n\r\n                               ]\r\n             }\r\n}",
                                                                    "options":  {
                                                                                    "raw":  {
                                                                                                "language":  "json"
@@ -820,7 +856,7 @@
                                                                      "value":  "application/json"
                                                                  },
                                                       "body":  {
-                                                                   "raw":  "{\n  \\",
+                                                                   "raw":  "{\r\n    \"section_code\":  \"tds_summary\",\r\n    \"data\":  {\r\n                 \"meta\":  {\r\n                              \"note\":  \"engine pending\"\r\n                          }\r\n             },\r\n    \"is_completed\":  false\r\n}",
                                                                    "options":  {
                                                                                    "raw":  {
                                                                                                "language":  "json"
@@ -865,7 +901,7 @@
                                                                      "value":  "application/json"
                                                                  },
                                                       "body":  {
-                                                                   "raw":  "{\n  \\",
+                                                                   "raw":  "{\r\n    \"section_code\":  \"bank_details\",\r\n    \"data\":  {\r\n                 \"bank_accounts\":  [\r\n                                       {\r\n                                           \"account_number\":  \"XXXX1234\",\r\n                                           \"total_credits\":  68921.02,\r\n                                           \"total_debits\":  70988.83,\r\n                                           \"total_balance\":  118448.49\r\n                                       }\r\n                                   ]\r\n             }\r\n}",
                                                                    "options":  {
                                                                                    "raw":  {
                                                                                                "language":  "json"
@@ -910,7 +946,7 @@
                                                                      "value":  "application/json"
                                                                  },
                                                       "body":  {
-                                                                   "raw":  "{\n  \\",
+                                                                   "raw":  "{\r\n    \"section_code\":  \"business_expenses\",\r\n    \"data\":  {\r\n                 \"rent_and_rates_annual\":  10000,\r\n                 \"salary_and_wages_annual\":  50000,\r\n                 \"electricity_and_water_charges\":  7000,\r\n                 \"additional_expenses\":  [\r\n                                             {\r\n                                                 \"type\":  \"internet\",\r\n                                                 \"amount\":  2500\r\n                                             }\r\n                                         ]\r\n             }\r\n}",
                                                                    "options":  {
                                                                                    "raw":  {
                                                                                                "language":  "json"
@@ -955,7 +991,7 @@
                                                                      "value":  "application/json"
                                                                  },
                                                       "body":  {
-                                                                   "raw":  "{\n  \\",
+                                                                   "raw":  "{\r\n    \"section_code\":  \"loan_details\",\r\n    \"data\":  {\r\n                 \"loans\":  [\r\n                               {\r\n                                   \"loan_type\":  \"home_loan\",\r\n                                   \"category\":  \"secured\",\r\n                                   \"provider_name\":  \"HDFC\",\r\n                                   \"loan_amount\":  1250000,\r\n                                   \"interest_rate\":  9.5,\r\n                                   \"tenure_years\":  15,\r\n                                   \"start_mt_yr\":  \"Apr-2023\"\r\n                               }\r\n                           ]\r\n             }\r\n}",
                                                                    "options":  {
                                                                                    "raw":  {
                                                                                                "language":  "json"
@@ -1000,7 +1036,7 @@
                                                                      "value":  "application/json"
                                                                  },
                                                       "body":  {
-                                                                   "raw":  "{\n  \\",
+                                                                   "raw":  "{\r\n    \"section_code\":  \"loan_summary\",\r\n    \"data\":  {\r\n                 \"monthly_wise_breakup\":  [\r\n                                              {\r\n                                                  \"month\":  \"Apr-2023\",\r\n                                                  \"emi\":  12500,\r\n                                                  \"principal_paid\":  4200,\r\n                                                  \"interest_paid\":  8300,\r\n                                                  \"closing_balance\":  1245800\r\n                                              }\r\n                                          ]\r\n             }\r\n}",
                                                                    "options":  {
                                                                                    "raw":  {
                                                                                                "language":  "json"

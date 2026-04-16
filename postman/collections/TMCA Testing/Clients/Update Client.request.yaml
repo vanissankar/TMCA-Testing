@@ -1,0 +1,20 @@
+$kind: http-request
+description: Any authenticated role can update a client, but only the creator is
+  allowed to edit it.
+url: "{{baseUrl}}/clients/{{clientId}}"
+method: PATCH
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "name_as_per_pan": "Updated Name",
+      "dob": "1990-01-15",
+      "proprietary_name": "Updated Firm"
+    }
+auth:
+  type: bearer
+  credentials:
+    token: "{{accessToken}}"
+order: 2000

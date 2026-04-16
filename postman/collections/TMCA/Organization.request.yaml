@@ -1,0 +1,13 @@
+$kind: http-request
+url: http://localhost:3000/organizations/register
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"name\": \"The Madras CA\"\r
+
+    }"
+auth:
+  type: noauth
+order: 1000

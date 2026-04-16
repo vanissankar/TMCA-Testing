@@ -1,0 +1,9 @@
+$kind: http-request
+description: Returns a client by id with role-based access control.
+url: "{{baseUrl}}/clients/{{clientId}}"
+method: GET
+auth:
+  type: bearer
+  credentials:
+    token: "{{accessToken}}"
+order: 6000

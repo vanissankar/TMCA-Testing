@@ -1,0 +1,13 @@
+$kind: http-request
+description: Team admin dashboard member detail.
+url: "{{baseUrl}}/dashboard/team-admin/member/{{memberId}}?page=1&limit=10&search="
+method: GET
+queryParams:
+  page: "1"
+  limit: "10"
+  search: ""
+auth:
+  type: bearer
+  credentials:
+    token: "{{accessToken}}"
+order: 4000

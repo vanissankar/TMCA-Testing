@@ -1,0 +1,10 @@
+$kind: http-request
+description: Returns a single organization by id. Admin can view any
+  organization; other roles can view their own organization only.
+url: "{{baseUrl}}/organizations/{{organizationId}}"
+method: GET
+auth:
+  type: bearer
+  credentials:
+    token: "{{accessToken}}"
+order: 2000

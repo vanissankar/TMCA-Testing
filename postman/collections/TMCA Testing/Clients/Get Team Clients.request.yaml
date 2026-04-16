@@ -1,0 +1,13 @@
+$kind: http-request
+description: Returns clients for the current team. Allowed for team_admin and team_lead.
+url: "{{baseUrl}}/clients/team?page=1&limit=10&search="
+method: GET
+queryParams:
+  page: "1"
+  limit: "10"
+  search: ""
+auth:
+  type: bearer
+  credentials:
+    token: "{{accessToken}}"
+order: 4000
