@@ -1,6 +1,5 @@
 $kind: http-request
-description: Admin and team_admin only. Admin can create all roles. Team admin
-  can only create team_lead and team_member in their own team.
+description: Admin and team_admin only. Admin can create all roles. Team admin can only create team_lead and team_member in their own team.
 url: "{{baseUrl}}/users/register"
 method: POST
 headers:

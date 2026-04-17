@@ -1,0 +1,14 @@
+$kind: http-request
+description: Lazy-load saved payload for a single onboarding section to prefill the UI.
+url: "{{baseUrl}}/clients/{{clientId}}/onboarding/section/{{sectionCode}}"
+method: GET
+headers:
+  - key: ""
+    value: ""
+  - key: ""
+    value: ""
+auth:
+  type: bearer
+  credentials:
+    token: "{{accessToken}}"
+order: 14000

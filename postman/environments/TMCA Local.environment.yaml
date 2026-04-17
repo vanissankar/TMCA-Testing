@@ -1,2 +1,10 @@
 name: TMCA Local
-values: []
+values:
+  baseUrl: http://localhost:3000
+  accessToken: ""
+  organizationId: ""
+  teamId: ""
+  userId: ""
+  clientId: ""
+  memberId: ""
+  sectionCode: client_details

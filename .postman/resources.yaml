@@ -11,4 +11,4 @@ localResources:
 cloudResources:
   collections:
     ..\postman\collections\TMCA: 3afd5961-bcd1-4454-ac03-b211c127e194
-    ..\postman\collections\TMCA Testing: 4b45550a-342c-410c-977b-e8c805096bea
+    ..\postman\collections\TMCA Testing: ebf3323d-e7e8-467b-b503-4b88222ac5f0

@@ -9,11 +9,39 @@ headers:
     value: ""
 body:
   type: json
-  content: |-
-    {
-      \
+  content: "{\r
+
+    \    \"section_code\":  \"loan_details\",\r
+
+    \    \"data\":  {\r
+
+    \                 \"loans\":  [\r
+
+    \                               {\r
+
+    \                                   \"loan_type\":  \"home_loan\",\r
+
+    \                                   \"category\":  \"secured\",\r
+
+    \                                   \"provider_name\":  \"HDFC\",\r
+
+    \                                   \"loan_amount\":  1250000,\r
+
+    \                                   \"interest_rate\":  9.5,\r
+
+    \                                   \"tenure_years\":  15,\r
+
+    \                                   \"start_mt_yr\":  \"Apr-2023\"\r
+
+    \                               }\r
+
+    \                           ]\r
+
+    \             }\r
+
+    }"
 auth:
   type: bearer
   credentials:
     token: "{{accessToken}}"
-order: 12000
+order: 11000

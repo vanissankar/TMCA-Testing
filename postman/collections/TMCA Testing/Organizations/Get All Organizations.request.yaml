@@ -1,6 +1,5 @@
 $kind: http-request
-description: Returns all organizations for admin; other roles get their own
-  organization scope.
+description: Returns all organizations for admin; other roles get their own organization scope.
 url: "{{baseUrl}}/organizations"
 method: GET
 auth:

@@ -1,6 +1,5 @@
 $kind: http-request
-description: Returns a single team by id. Admin can view any team; other roles
-  can view their own team only.
+description: Returns a single team by id. Admin can view any team; other roles can view their own team only.
 url: "{{baseUrl}}/teams/{{teamId}}"
 method: GET
 auth:

@@ -485,50 +485,6 @@
                      "name":  "Clients",
                      "item":  [
                                   {
-                                      "name":  "Create Client",
-                                      "request":  {
-                                                      "auth":  {
-                                                                   "type":  "bearer",
-                                                                   "bearer":  [
-                                                                                  {
-                                                                                      "key":  "token",
-                                                                                      "value":  "{{accessToken}}",
-                                                                                      "type":  "string"
-                                                                                  }
-                                                                              ]
-                                                               },
-                                                      "method":  "POST",
-                                                      "header":  [
-                                                                     {
-                                                                         "key":  "Content-Type",
-                                                                         "value":  "application/json"
-                                                                     }
-                                                                 ],
-                                                      "body":  {
-                                                                   "mode":  "raw",
-                                                                   "raw":  "{\n  \"pan_number\": \"ABCDE1234F\",\n  \"name_as_per_pan\": \"Amit Kumar\",\n  \"dob\": \"1990-01-15\",\n  \"proprietary_name\": \"Amit Traders\"\n}",
-                                                                   "options":  {
-                                                                                   "raw":  {
-                                                                                               "language":  "json"
-                                                                                           }
-                                                                               }
-                                                               },
-                                                      "url":  {
-                                                                  "raw":  "{{baseUrl}}/clients",
-                                                                  "host":  [
-                                                                               "{{baseUrl}}"
-                                                                           ],
-                                                                  "path":  [
-                                                                               "clients"
-                                                                           ]
-                                                              },
-                                                      "description":  "Team lead and team member only. Creates a client record under the logged-in user."
-                                                  },
-                                      "response":  [
-
-                                                   ]
-                                  },
-                                  {
                                       "name":  "Update Client",
                                       "request":  {
                                                       "auth":  {
@@ -1091,6 +1047,43 @@
                                                                }
                                                   },
                                       "name":  "Onboarding - Get Status",
+                                      "response":  [
+
+                                                   ]
+                                  },
+                                  {
+                                      "request":  {
+                                                      "method":  "GET",
+                                                      "url":  {
+                                                                  "host":  [
+                                                                               "{{baseUrl}}"
+                                                                           ],
+                                                                  "raw":  "{{baseUrl}}/clients/{{clientId}}/onboarding/section/{{sectionCode}}",
+                                                                  "path":  [
+                                                                               "clients",
+                                                                               "{{clientId}}",
+                                                                               "onboarding",
+                                                                               "section",
+                                                                               "{{sectionCode}}"
+                                                                           ]
+                                                              },
+                                                      "description":  "Lazy-load saved payload for a single onboarding section to prefill the UI.",
+                                                      "header":  {
+                                                                     "key":  "Content-Type",
+                                                                     "value":  "application/json"
+                                                                 },
+                                                      "auth":  {
+                                                                   "bearer":  [
+                                                                                  {
+                                                                                      "key":  "token",
+                                                                                      "type":  "string",
+                                                                                      "value":  "{{accessToken}}"
+                                                                                  }
+                                                                              ],
+                                                                   "type":  "bearer"
+                                                               }
+                                                  },
+                                      "name":  "Onboarding - Get Section Prefill",
                                       "response":  [
 
                                                    ]

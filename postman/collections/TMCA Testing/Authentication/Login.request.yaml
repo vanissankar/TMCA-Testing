@@ -1,6 +1,5 @@
 $kind: http-request
-description: Use this request first. It returns access_token and the script
-  stores it in the accessToken collection variable.
+description: Use this request first. It returns access_token and the script stores it in the accessToken collection variable.
 url: "{{baseUrl}}/auth/login"
 method: POST
 headers:
@@ -16,20 +15,13 @@ auth:
   type: noauth
 scripts:
   - type: afterResponse
-    code: >-
+    code: |-
       const json = pm.response.json();
-
       pm.test('Login response contains access_token', function () {
         pm.expect(json?.data?.access_token).to.be.a('string');
       });
-
-      if (json?.data?.access_token) pm.collectionVariables.set("accessToken",
-      json.data.access_token);
-
-      if (json?.data?.user?.id) pm.collectionVariables.set("userId",
-      json.data.user.id);
-
-      if (json?.data?.user?.team_id) pm.collectionVariables.set("teamId",
-      json.data.user.team_id);
+      if (json?.data?.access_token) pm.collectionVariables.set("accessToken", json.data.access_token);
+      if (json?.data?.user?.id) pm.collectionVariables.set("userId", json.data.user.id);
+      if (json?.data?.user?.team_id) pm.collectionVariables.set("teamId", json.data.user.team_id);
     language: text/javascript
 order: 1000

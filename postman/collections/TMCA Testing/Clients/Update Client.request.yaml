@@ -1,6 +1,5 @@
 $kind: http-request
-description: Any authenticated role can update a client, but only the creator is
-  allowed to edit it.
+description: Any authenticated role can update a client, but only the creator is allowed to edit it.
 url: "{{baseUrl}}/clients/{{clientId}}"
 method: PATCH
 headers:
@@ -17,4 +16,4 @@ auth:
   type: bearer
   credentials:
     token: "{{accessToken}}"
-order: 2000
+order: 1000

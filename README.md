@@ -15,7 +15,7 @@ This repository is the Postman test pack for the TMCA backend. It exists so the 
 - Organizations: register, get by id, get all
 - Teams: register, get by id, get by organization
 - Users: register, get profile, get by id
-- Clients: create, update, get my clients, get team clients, onboarding summary, get by id
+- Clients: update, get my clients, get team clients, onboarding summary, get by id
 - Onboarding sections: initial client details save, section-wise save, status fetch, submit
 - Dashboards: admin, team_admin, team_lead, team_member routes
 
@@ -38,13 +38,12 @@ This repository is the Postman test pack for the TMCA backend. It exists so the 
    - `Users > Register User`
    - `Users > Get My Profile`
    - `Users > Get User By Id`
-   - `Clients > Create Client`
+  - `Clients > Onboarding - Initial Save Client Details`
    - `Clients > Update Client`
    - `Clients > Get My Clients`
    - `Clients > Get Team Clients`
    - `Clients > Get Onboarding Summary`
    - `Clients > Get Client By Id`
-  - `Clients > Onboarding - Initial Save Client Details`
   - `Clients > Onboarding - Save Form Uploads`
   - `Clients > Onboarding - Save TDS Summary (Draft)`
   - `Clients > Onboarding - Save Bank Details`
@@ -52,6 +51,7 @@ This repository is the Postman test pack for the TMCA backend. It exists so the 
   - `Clients > Onboarding - Save Loan Details`
   - `Clients > Onboarding - Save Loan Summary`
   - `Clients > Onboarding - Get Status`
+  - `Clients > Onboarding - Get Section Prefill`
   - `Clients > Onboarding - Submit`
    - `Dashboard > Admin Overview`
    - `Dashboard > Admin Team Overview`
@@ -69,7 +69,9 @@ This repository is the Postman test pack for the TMCA backend. It exists so the 
 - User registration requires an admin or team_admin token.
 - Client and dashboard routes require a valid Bearer token.
 - Onboarding starts with `client_details` via `POST /clients/onboarding/save`.
+- There is no separate `POST /clients` create route in the active test flow.
 - Other onboarding sections save via `POST /clients/:clientId/onboarding/save`.
+- Single-section prefill is available via `GET /clients/:clientId/onboarding/section/:sectionCode`.
 - Final onboarding submit uses `POST /clients/:clientId/onboarding/submit`.
 - `tds_summary` generation is pending and is treated as draft in tests.
 
@@ -126,14 +128,19 @@ Using username:
 }
 ```
 
-### Create Client
+### Onboarding Initial Save Client Details
 
 ```json
 {
-  "pan_number": "ABCDE1234F",
-  "name_as_per_pan": "Amit Kumar",
-  "dob": "1990-01-15",
-  "proprietary_name": "Amit Traders"
+  "section_code": "client_details",
+  "data": {
+    "pan_number": "ABCDE1234F",
+    "dob": "1990-01-15",
+    "proprietary_name": "Amit Traders",
+    "name_as_per_pan": "Amit Kumar",
+    "assessment_year": "2024-25",
+    "financial_year": "2023-24"
+  }
 }
 ```
 

@@ -9,11 +9,35 @@ headers:
     value: ""
 body:
   type: json
-  content: |-
-    {
-      \
+  content: "{\r
+
+    \    \"section_code\":  \"loan_summary\",\r
+
+    \    \"data\":  {\r
+
+    \                 \"monthly_wise_breakup\":  [\r
+
+    \                                              {\r
+
+    \                                                  \"month\":  \"Apr-2023\",\r
+
+    \                                                  \"emi\":  12500,\r
+
+    \                                                  \"principal_paid\":  4200,\r
+
+    \                                                  \"interest_paid\":  8300,\r
+
+    \                                                  \"closing_balance\":  1245800\r
+
+    \                                              }\r
+
+    \                                          ]\r
+
+    \             }\r
+
+    }"
 auth:
   type: bearer
   credentials:
     token: "{{accessToken}}"
-order: 13000
+order: 12000

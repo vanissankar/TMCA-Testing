@@ -9,11 +9,33 @@ headers:
     value: ""
 body:
   type: json
-  content: |-
-    {
-      \
+  content: "{\r
+
+    \    \"section_code\":  \"bank_details\",\r
+
+    \    \"data\":  {\r
+
+    \                 \"bank_accounts\":  [\r
+
+    \                                       {\r
+
+    \                                           \"account_number\":  \"XXXX1234\",\r
+
+    \                                           \"total_credits\":  68921.02,\r
+
+    \                                           \"total_debits\":  70988.83,\r
+
+    \                                           \"total_balance\":  118448.49\r
+
+    \                                       }\r
+
+    \                                   ]\r
+
+    \             }\r
+
+    }"
 auth:
   type: bearer
   credentials:
     token: "{{accessToken}}"
-order: 10000
+order: 9000

@@ -9,11 +9,35 @@ headers:
     value: ""
 body:
   type: json
-  content: |-
-    {
-      \
+  content: "{\r
+
+    \    \"section_code\":  \"business_expenses\",\r
+
+    \    \"data\":  {\r
+
+    \                 \"rent_and_rates_annual\":  10000,\r
+
+    \                 \"salary_and_wages_annual\":  50000,\r
+
+    \                 \"electricity_and_water_charges\":  7000,\r
+
+    \                 \"additional_expenses\":  [\r
+
+    \                                             {\r
+
+    \                                                 \"type\":  \"internet\",\r
+
+    \                                                 \"amount\":  2500\r
+
+    \                                             }\r
+
+    \                                         ]\r
+
+    \             }\r
+
+    }"
 auth:
   type: bearer
   credentials:
     token: "{{accessToken}}"
-order: 11000
+order: 10000

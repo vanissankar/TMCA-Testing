@@ -1,6 +1,5 @@
 $kind: http-request
-description: Creates client_details and initializes filing. Stores
-  data.client_id into collection variable clientId.
+description: Creates client_details and initializes filing. Stores data.client_id into collection variable clientId.
 url: "{{baseUrl}}/clients/onboarding/save"
 method: POST
 headers:
@@ -10,19 +9,35 @@ headers:
     value: ""
 body:
   type: json
-  content: |-
-    {
-      \
+  content: "{\r
+
+    \    \"section_code\":  \"client_details\",\r
+
+    \    \"data\":  {\r
+
+    \                 \"pan_number\":  \"ABCDE1234F\",\r
+
+    \                 \"dob\":  \"1990-01-15\",\r
+
+    \                 \"proprietary_name\":  \"Amit Traders\",\r
+
+    \                 \"name_as_per_pan\":  \"Amit Kumar\",\r
+
+    \                 \"assessment_year\":  \"2024-25\",\r
+
+    \                 \"financial_year\":  \"2023-24\"\r
+
+    \             }\r
+
+    }"
 auth:
   type: bearer
   credentials:
     token: "{{accessToken}}"
 scripts:
   - type: afterResponse
-    code: >-
+    code: |-
       const json = pm.response.json();
-
-      if (json?.data?.client_id) { pm.collectionVariables.set("clientId",
-      json.data.client_id); }
+      if (json?.data?.client_id) { pm.collectionVariables.set("clientId", json.data.client_id); }
     language: text/javascript
-order: 7000
+order: 6000

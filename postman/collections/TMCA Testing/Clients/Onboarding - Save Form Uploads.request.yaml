@@ -9,11 +9,41 @@ headers:
     value: ""
 body:
   type: json
-  content: |-
-    {
-      \
+  content: "{\r
+
+    \    \"section_code\":  \"form_uploads\",\r
+
+    \    \"data\":  {\r
+
+    \                 \"form_26as_files\":  [\r
+
+    \                                         {\r
+
+    \                                             \"file_url\":  \"https://files.example.com/26as-2024.pdf\",\r
+
+    \                                             \"document_type\":  \"form_26as\"\r
+
+    \                                         }\r
+
+    \                                     ],\r
+
+    \                 \"form_16_files\":  [\r
+
+    \r
+
+    \                                   ],\r
+
+    \                 \"ais_files\":  [\r
+
+    \r
+
+    \                               ]\r
+
+    \             }\r
+
+    }"
 auth:
   type: bearer
   credentials:
     token: "{{accessToken}}"
-order: 8000
+order: 7000

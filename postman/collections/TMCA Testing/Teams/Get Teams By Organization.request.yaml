@@ -1,6 +1,5 @@
 $kind: http-request
-description: Returns all teams for an organization. Admin can view any
-  organization; team_admin and team_lead can only view their own organization.
+description: Returns all teams for an organization. Admin can view any organization; team_admin and team_lead can only view their own organization.
 url: "{{baseUrl}}/teams/organization/{{organizationId}}"
 method: GET
 auth:

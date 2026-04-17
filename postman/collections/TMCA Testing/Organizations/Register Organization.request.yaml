@@ -16,10 +16,8 @@ auth:
     token: "{{accessToken}}"
 scripts:
   - type: afterResponse
-    code: >-
+    code: |-
       const json = pm.response.json();
-
-      if (json?.data?.id) pm.collectionVariables.set("organizationId",
-      json.data.id);
+      if (json?.data?.id) pm.collectionVariables.set("organizationId", json.data.id);
     language: text/javascript
 order: 1000
