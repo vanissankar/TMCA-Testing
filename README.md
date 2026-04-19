@@ -18,6 +18,7 @@ This repository is the Postman test pack for the TMCA backend. It exists so the 
 - Clients: update, get my clients, get team clients, onboarding summary, get by id
 - Onboarding sections: initial client details save, section-wise save, status fetch, submit
 - Dashboards: admin, team_admin, team_lead, team_member routes
+- Member dashboard: stats and recent activity routes
 
 ## How to test in Postman
 
@@ -60,6 +61,8 @@ This repository is the Postman test pack for the TMCA backend. It exists so the 
    - `Dashboard > Team Lead Overview`
    - `Dashboard > Team Lead Member Detail`
    - `Dashboard > Team Member Overview`
+    - `Dashboard > Member Dashboard Stats`
+    - `Dashboard > Member Dashboard Recent Activity`
 
 ## Current backend rules reflected here
 
@@ -74,6 +77,8 @@ This repository is the Postman test pack for the TMCA backend. It exists so the 
 - Single-section prefill is available via `GET /clients/:clientId/onboarding/section/:sectionCode`.
 - Final onboarding submit uses `POST /clients/:clientId/onboarding/submit`.
 - `tds_summary` generation is pending and is treated as draft in tests.
+- Dashboard list endpoints now support shared search fields across client name, PAN number, assessment year, and status.
+- Admin dashboard overview also supports `role=team_lead|team_member` for row filtering.
 
 ## Example request bodies
 

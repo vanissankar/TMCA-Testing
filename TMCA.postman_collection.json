@@ -1147,7 +1147,7 @@
 
                                                                  ],
                                                       "url":  {
-                                                                  "raw":  "{{baseUrl}}/dashboard/admin/overview?page=1\u0026limit=10\u0026search=\u0026from=\u0026to=",
+                                                                  "raw":  "{{baseUrl}}/dashboard/admin/overview?page=1\u0026limit=10\u0026search=\u0026from=\u0026to=\u0026role=",
                                                                   "host":  [
                                                                                "{{baseUrl}}"
                                                                            ],
@@ -1176,10 +1176,14 @@
                                                                                 {
                                                                                     "key":  "to",
                                                                                     "value":  ""
+                                                                                },
+                                                                                {
+                                                                                    "key":  "role",
+                                                                                    "value":  ""
                                                                                 }
                                                                             ]
                                                               },
-                                                      "description":  "Admin dashboard overview with optional filters."
+                                                      "description":  "Admin dashboard overview with optional filters. Search matches client name, PAN number, assessment year, and status. Role filters rows only and is limited to team_lead or team_member."
                                                   },
                                       "response":  [
 
@@ -1228,7 +1232,7 @@
                                                                                 }
                                                                             ]
                                                               },
-                                                      "description":  "Admin dashboard team overview."
+                                                      "description":  "Admin dashboard team overview. Search matches team member name and client fields inside the directory rows."
                                                   },
                                       "response":  [
 
@@ -1252,7 +1256,7 @@
 
                                                                  ],
                                                       "url":  {
-                                                                  "raw":  "{{baseUrl}}/dashboard/team-admin/overview?page=1\u0026limit=10\u0026search=",
+                                                                  "raw":  "{{baseUrl}}/dashboard/team-admin/overview?view=all\u0026status=\u0026assessmentYear=\u0026search=\u0026page=1\u0026limit=10",
                                                                   "host":  [
                                                                                "{{baseUrl}}"
                                                                            ],
@@ -1273,10 +1277,22 @@
                                                                                 {
                                                                                     "key":  "search",
                                                                                     "value":  ""
+                                                                                },
+                                                                                {
+                                                                                    "key":  "view",
+                                                                                    "value":  "all"
+                                                                                },
+                                                                                {
+                                                                                    "key":  "status",
+                                                                                    "value":  ""
+                                                                                },
+                                                                                {
+                                                                                    "key":  "assessmentYear",
+                                                                                    "value":  ""
                                                                                 }
                                                                             ]
                                                               },
-                                                      "description":  "Team admin dashboard overview."
+                                                      "description":  "Team admin dashboard overview. Search matches member name plus client name, PAN, assessment year, and status."
                                                   },
                                       "response":  [
 
@@ -1300,7 +1316,7 @@
 
                                                                  ],
                                                       "url":  {
-                                                                  "raw":  "{{baseUrl}}/dashboard/team-admin/member/{{memberId}}?page=1\u0026limit=10\u0026search=",
+                                                                  "raw":  "{{baseUrl}}/dashboard/team-admin/member/{{memberId}}?status=\u0026assessmentYear=\u0026search=\u0026page=1\u0026limit=10",
                                                                   "host":  [
                                                                                "{{baseUrl}}"
                                                                            ],
@@ -1322,10 +1338,18 @@
                                                                                 {
                                                                                     "key":  "search",
                                                                                     "value":  ""
+                                                                                },
+                                                                                {
+                                                                                    "key":  "status",
+                                                                                    "value":  ""
+                                                                                },
+                                                                                {
+                                                                                    "key":  "assessmentYear",
+                                                                                    "value":  ""
                                                                                 }
                                                                             ]
                                                               },
-                                                      "description":  "Team admin dashboard member detail."
+                                                      "description":  "Team admin dashboard member detail. Search matches client name, PAN, assessment year, and status."
                                                   },
                                       "response":  [
 
@@ -1349,7 +1373,7 @@
 
                                                                  ],
                                                       "url":  {
-                                                                  "raw":  "{{baseUrl}}/dashboard/team-lead/overview?page=1\u0026limit=10\u0026search=",
+                                                                  "raw":  "{{baseUrl}}/dashboard/team-lead/overview?view=team_members\u0026status=\u0026assessmentYear=\u0026search=\u0026page=1\u0026limit=10\u0026from=\u0026to=",
                                                                   "host":  [
                                                                                "{{baseUrl}}"
                                                                            ],
@@ -1370,10 +1394,30 @@
                                                                                 {
                                                                                     "key":  "search",
                                                                                     "value":  ""
+                                                                                },
+                                                                                {
+                                                                                    "key":  "view",
+                                                                                    "value":  "team_members"
+                                                                                },
+                                                                                {
+                                                                                    "key":  "status",
+                                                                                    "value":  ""
+                                                                                },
+                                                                                {
+                                                                                    "key":  "assessmentYear",
+                                                                                    "value":  ""
+                                                                                },
+                                                                                {
+                                                                                    "key":  "from",
+                                                                                    "value":  ""
+                                                                                },
+                                                                                {
+                                                                                    "key":  "to",
+                                                                                    "value":  ""
                                                                                 }
                                                                             ]
                                                               },
-                                                      "description":  "Team lead dashboard overview."
+                                                      "description":  "Team lead dashboard overview. Search matches member name plus client name, PAN, assessment year, and status."
                                                   },
                                       "response":  [
 
@@ -1397,7 +1441,7 @@
 
                                                                  ],
                                                       "url":  {
-                                                                  "raw":  "{{baseUrl}}/dashboard/team-lead/member/{{memberId}}?page=1\u0026limit=10\u0026search=",
+                                                                  "raw":  "{{baseUrl}}/dashboard/team-lead/member/{{memberId}}?status=\u0026assessmentYear=\u0026search=\u0026page=1\u0026limit=10",
                                                                   "host":  [
                                                                                "{{baseUrl}}"
                                                                            ],
@@ -1419,10 +1463,18 @@
                                                                                 {
                                                                                     "key":  "search",
                                                                                     "value":  ""
+                                                                                },
+                                                                                {
+                                                                                    "key":  "status",
+                                                                                    "value":  ""
+                                                                                },
+                                                                                {
+                                                                                    "key":  "assessmentYear",
+                                                                                    "value":  ""
                                                                                 }
                                                                             ]
                                                               },
-                                                      "description":  "Team lead dashboard member detail."
+                                                      "description":  "Team lead dashboard member detail. Search matches client name, PAN, assessment year, and status."
                                                   },
                                       "response":  [
 
@@ -1446,7 +1498,7 @@
 
                                                                  ],
                                                       "url":  {
-                                                                  "raw":  "{{baseUrl}}/dashboard/team-member/overview?page=1\u0026limit=10\u0026search=",
+                                                                  "raw":  "{{baseUrl}}/dashboard/team-member/overview?page=1\u0026limit=10\u0026search=\u0026from=\u0026to=\u0026assessmentYear=\u0026status=",
                                                                   "host":  [
                                                                                "{{baseUrl}}"
                                                                            ],
@@ -1467,14 +1519,110 @@
                                                                                 {
                                                                                     "key":  "search",
                                                                                     "value":  ""
+                                                                                },
+                                                                                {
+                                                                                    "key":  "from",
+                                                                                    "value":  ""
+                                                                                },
+                                                                                {
+                                                                                    "key":  "to",
+                                                                                    "value":  ""
+                                                                                },
+                                                                                {
+                                                                                    "key":  "assessmentYear",
+                                                                                    "value":  ""
+                                                                                },
+                                                                                {
+                                                                                    "key":  "status",
+                                                                                    "value":  ""
                                                                                 }
                                                                             ]
                                                               },
-                                                      "description":  "Team member dashboard overview."
+                                                      "description":  "Team member dashboard overview. Search matches client name, PAN, assessment year, and status."
                                                   },
                                       "response":  [
 
                                                    ]
+                                              },
+                                              {
+                                                  "name":  "Member Dashboard Stats",
+                                                  "request":  {
+                                                                  "auth":  {
+                                                                               "type":  "bearer",
+                                                                               "bearer":  [
+                                                                                              {
+                                                                                                  "key":  "token",
+                                                                                                  "value":  "{{accessToken}}",
+                                                                                                  "type":  "string"
+                                                                                              }
+                                                                                          ]
+                                                                           },
+                                                                  "method":  "GET",
+                                                                  "header":  [
+
+                                                                             ],
+                                                                  "url":  {
+                                                                              "raw":  "{{baseUrl}}/member-dashboard/stats",
+                                                                              "host":  [
+                                                                                           "{{baseUrl}}"
+                                                                                       ],
+                                                                              "path":  [
+                                                                                           "member-dashboard",
+                                                                                           "stats"
+                                                                                       ]
+                                                                          },
+                                                                  "description":  "Member dashboard KPI stats for team_member and team_lead."
+                                                              },
+                                                  "response":  [
+
+                                                               ]
+                                              },
+                                              {
+                                                  "name":  "Member Dashboard Recent Activity",
+                                                  "request":  {
+                                                                  "auth":  {
+                                                                               "type":  "bearer",
+                                                                               "bearer":  [
+                                                                                              {
+                                                                                                  "key":  "token",
+                                                                                                  "value":  "{{accessToken}}",
+                                                                                                  "type":  "string"
+                                                                                              }
+                                                                                          ]
+                                                                           },
+                                                                  "method":  "GET",
+                                                                  "header":  [
+
+                                                                             ],
+                                                                  "url":  {
+                                                                              "raw":  "{{baseUrl}}/member-dashboard/recent-activity?page=1\u0026limit=10\u0026search=",
+                                                                              "host":  [
+                                                                                           "{{baseUrl}}"
+                                                                                       ],
+                                                                              "path":  [
+                                                                                           "member-dashboard",
+                                                                                           "recent-activity"
+                                                                                       ],
+                                                                              "query":  [
+                                                                                            {
+                                                                                                "key":  "page",
+                                                                                                "value":  "1"
+                                                                                            },
+                                                                                            {
+                                                                                                "key":  "limit",
+                                                                                                "value":  "10"
+                                                                                            },
+                                                                                            {
+                                                                                                "key":  "search",
+                                                                                                "value":  ""
+                                                                                            }
+                                                                                        ]
+                                                                          },
+                                                                  "description":  "Member dashboard recent activity. Search matches client name, PAN number, assessment year, and status."
+                                                              },
+                                                  "response":  [
+
+                                                               ]
                                   }
                               ]
                  }
